@@ -1,0 +1,26 @@
+//A. Magic Numbers
+#include <bits/stdc++.h>
+typedef long long int ll;
+using namespace std;
+
+
+int main(){
+    ll n,m,pos,time;pos=1;time=0;
+    cin>>n>>m;
+    for (int i=0;i<m;i++){
+        int x;cin>>x;
+        int inc;
+        if (x-pos>0){
+            time+=x-pos;
+        }
+        else if(x-pos<0){
+            time+=n-(pos-x);
+        }
+        else{
+            time+=0;
+        }
+        pos=x;
+
+    }
+    cout<<time;
+}
